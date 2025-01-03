@@ -6,7 +6,7 @@
 #include <time.h>
 
 
-void create_ant_message(char *message, int heart_rate){
+void create_ant_message(unsigned char *message, int heart_rate){
     message[0] = 0x4E; // page number
     message[1] = 0x00;
     message[2] = heart_rate;

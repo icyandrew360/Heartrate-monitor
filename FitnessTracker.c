@@ -45,7 +45,7 @@ void fitness_tracker(){
             heart_rates[count] = heart_rate;
             count++;
 
-            print("recvd heart rate: %d\n", heart_rate);
+            printf("recvd heart rate: %d\n", heart_rate);
         }
 
         // generate metrics every for the last 10 messages
@@ -62,4 +62,9 @@ void fitness_tracker(){
             count = 0;
         }
     }
+}
+
+int main(){
+    fitness_tracker();
+    return 0;
 }
