@@ -8,6 +8,8 @@ Each message is processed by the slave(FitnessTracker) and upon successful recep
 
 Heartrate data is sent periodically (4hz).
 
+## Usage:
+
 To build: run the command "make" in your terminal. Run the ./FitnessTracker exec in a terminal, then run ./HRM in another terminal in order to simulate heartrate data collected using ANT protocol style packets.
 
 Run make clean to clean up build artifacts.
