@@ -15,3 +15,5 @@ FitnessTracker: FitnessTracker.o
 FitnessTracker.o: FitnessTracker.c
 	$(CXX) $(CXXFLAGS) -c FitnessTracker.c
 
+clean:
+	rm -f HRM HRM.o FitnessTracker FitnessTracker.o
