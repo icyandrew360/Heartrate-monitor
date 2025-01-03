@@ -40,6 +40,7 @@ void hrm_broadcast(){
     slave_addr.sin_port = htons(5001); // convert to network byte order
     slave_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
+    memset(&recv_addr, 0, sizeof(recv_addr));
     recv_addr.sin_family = AF_INET;
     recv_addr.sin_port = htons(5000); // listen on different port
     recv_addr.sin_addr.s_addr = INADDR_ANY;
@@ -62,7 +63,6 @@ void hrm_broadcast(){
         }
         else{
             printf("HRM sent Heart rate: %d\n", heart_rate);
-
         }
 
         if (recvfrom(sock, recv_ack_message, sizeof(recv_ack_message), 0, NULL, NULL) < 0){
