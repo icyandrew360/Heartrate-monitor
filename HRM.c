@@ -4,10 +4,6 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <time.h>
-#include <bluetooth/bluetooth.h>
-#include <bluetooth/hci.h>
-#include <bluetooth/hci_lib.h>
-#include <bluetooth/l2cap.h>
 
 void create_ant_message(unsigned char *message, int heart_rate){
     message[0] = 0x4E; // page number
