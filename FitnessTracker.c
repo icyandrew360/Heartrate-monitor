@@ -38,6 +38,7 @@ void fitness_tracker(){
     addr.sin_port = htons(5001);
     addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
+    memset(&ack_addr, 0, sizeof(ack_addr));
     ack_addr.sin_family = AF_INET;
     ack_addr.sin_port = htons(5000);
     ack_addr.sin_addr.s_addr = INADDR_ANY;
