@@ -10,10 +10,20 @@ void extract_heartrate_from_message(unsigned char *message, int *heart_rate){
     *heart_rate = message[2];
 }
 
+void create_ack_message(unsigned char *message, int heart_rate){
+    message[0] = 0x4F;
+    message[1] = 0x00; 
+    message[2] = heart_rate;
+    for (int i = 3; i < 8; i++){
+        message[i] = 0x00;
+    }
+}
+
 void fitness_tracker(){
     int sock;
     struct sockaddr_in addr;
     unsigned char message[8];
+    unsigned char ack_message[8];
     int heart_rates[MAX_HEART_RATE_VALUES];
     int count = 0;
 
